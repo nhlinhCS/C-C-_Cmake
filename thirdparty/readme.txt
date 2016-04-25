@@ -1,0 +1,1 @@
+if you have third party you add here and config makefile/CMakeLists.txt
