@@ -5,7 +5,7 @@ source code just simple files: src/hellomake.c;  src/hellofunc.c; include/hellom
 the folder example is just try to build a recursive cmake file, it create folder example in build folder that contain the execute file. 
 
 #Build this app: 
-
+	$mkdir build
 	$ cd build 
 	$ cmake ..
 	$ make
