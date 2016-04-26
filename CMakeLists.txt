@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(hello)
+project(cmaketutorial)
 
 include(ExternalProject)
 
@@ -18,23 +18,24 @@ ExternalProject_Add(opencv-3.1.0
 	CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}
 )
 
-add_subdirectory(${CMAKE_SOURCE_DIR}/example)
-#add_subdirectory(${CMAKE_SOURCE_DIR}/src/opencv)
+add_subdirectory(${CMAKE_SOURCE_DIR}/exampleHello)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/opencv)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/hello)
 link_directories(${CMAKE_BINARY_DIR}/lib)
 
-include_directories(${CMAKE_BINARY_DIR}/include ${CMAKE_SOURCE_DIR}/include)
+# include_directories(${CMAKE_BINARY_DIR}/include ${CMAKE_SOURCE_DIR}/include)
 
 message(${CMAKE_SOURCE_DIR})	
 set(CMAKE_VERBOSE_MAKEFILE on)
 
-set(SOURCES_FILE
-	#${CMAKE_SOURCE_DIR}/include/hellomake.h
-	${CMAKE_SOURCE_DIR}/src/hellofunc.c
-	${CMAKE_SOURCE_DIR}/src/hellomake.c
-)
-add_executable(hello ${SOURCES_FILE})
+# set(SOURCES_FILE
+# 	#${CMAKE_SOURCE_DIR}/include/hellomake.h
+# 	${CMAKE_SOURCE_DIR}/src/example/hellofunc.c
+# 	${CMAKE_SOURCE_DIR}/src/example/hellomake.c
+# )
+# add_executable(hello ${SOURCES_FILE})
 
-add_executable(gtest1 src/gtest1.cpp)
-target_link_libraries(gtest1 -L${CMAKE_BINARY_DIR}/lib -lgtest -lgtest_main)
+# add_executable(gtest1 src/gtest1.cpp)
+# target_link_libraries(gtest1 -L${CMAKE_BINARY_DIR}/lib -lgtest -lgtest_main)
 
 
