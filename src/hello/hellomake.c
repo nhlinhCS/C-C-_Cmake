@@ -1,8 +1,8 @@
-#include <hellomake.h>
+#include <stdio.h>
+#include "hellomake.h"
 
-int main() {
-  // call a function in another file
-  myHello();
+void myHello(void) {
+	printf("HELLO WORLD OF CAMKEFILES!\n");
 
-  return(0);
+  return;
 }

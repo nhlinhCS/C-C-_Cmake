@@ -9,14 +9,17 @@ include(ExternalProject)
 # 	CONFIGURE_COMMAND ${CMAKE_COMMAND} -DCMAKE_INSTALL_PREFIX=${CMAKE_SOURCE_DIR} -G ${CMAKE_GENERATOR} ${CMAKE_SOURCE_DIR}/thirdparty/googletest-master
 # ) #add 3rdparty googletest-master source 
 
+#download externale project googletest master
 ExternalProject_Add(gtest 
 	GIT_REPOSITORY https://github.com/google/googletest.git
 	CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}	
 )
-ExternalProject_Add(opencv-3.1.0 
-	URL https://github.com/Itseez/opencv/archive/3.1.0.zip
-	CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}
-)
+
+#download external project opencv-3.1.0
+# ExternalProject_Add(opencv-3.1.0 
+# 	URL https://github.com/Itseez/opencv/archive/3.1.0.zip
+# 	CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}
+# )
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/exampleHello)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/opencv)
@@ -27,6 +30,7 @@ link_directories(${CMAKE_BINARY_DIR}/lib)
 
 message(${CMAKE_SOURCE_DIR})	
 set(CMAKE_VERBOSE_MAKEFILE on)
+
 
 # set(SOURCES_FILE
 # 	#${CMAKE_SOURCE_DIR}/include/hellomake.h

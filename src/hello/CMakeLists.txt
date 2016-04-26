@@ -7,8 +7,8 @@ include_directories(${cmaketutorial_SOURCE_DIR}/include ${cmaketutorial_BINARY_D
 link_directories(${hello_BINARY_DIR}/lib)
 
 set(SOURCES_FILE
-	hellofunc.c
 	hellomake.c
+	main.c
 )
 add_executable(hello ${SOURCES_FILE})
 
