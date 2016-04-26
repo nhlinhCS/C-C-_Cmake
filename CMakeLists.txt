@@ -21,9 +21,9 @@ ExternalProject_Add(gtest
 # 	CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}
 # )
 
-add_subdirectory(${CMAKE_SOURCE_DIR}/exampleHello)
-add_subdirectory(${CMAKE_SOURCE_DIR}/src/opencv)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/hello)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/gtest)
+
 link_directories(${CMAKE_BINARY_DIR}/lib)
 
 # include_directories(${CMAKE_BINARY_DIR}/include ${CMAKE_SOURCE_DIR}/include)
